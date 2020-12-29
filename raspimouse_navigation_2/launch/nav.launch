@@ -1,0 +1,9 @@
+<launch>
+
+	<node pkg="rviz" type="rviz" name="rviz" />
+	<node pkg="map_server" type="map_server" name="map_server" args="$(find slam)/map/room.yaml" />
+
+	<include file="$(find raspimouse_navigation_2)/launch/run_move_base.launch" />
+	<include file="$(find raspimouse_navigation_2)/launch/run_amcl.launch" />
+
+</launch>
